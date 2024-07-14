@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Color, ScaleType,} from '@swimlane/ngx-charts';
 import { Observable, Subscription,} from 'rxjs';
@@ -12,7 +12,7 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss'],
 })
-export class DetailComponent implements OnInit {
+export class DetailComponent implements OnInit, OnDestroy {
 
   countryId: number | null = null;
   countryDetails$: Observable<Olympic | undefined> | undefined;

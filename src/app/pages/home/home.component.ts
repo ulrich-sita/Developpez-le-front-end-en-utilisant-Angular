@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subscription, map, of, partition } from 'rxjs';
 import { Olympic } from 'src/app/core/models/Olympic';
@@ -11,7 +11,7 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   public olympicEntries$: Observable<Olympic[]> = of([]);
   countriesLength!: number;
   totalEntries: number = 0;
