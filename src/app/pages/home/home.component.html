@@ -1,5 +1,5 @@
  <div *ngIf="medals.length != 0; else loading"  class="chart-container">
-  <h2 class="title">Medals per Country</h2>
+  <h2 class="medal">Medals per Country</h2>
   <div class="info-container">
     <div class="joCount">
       <p>Number of JOs</p>
@@ -11,9 +11,8 @@
     </div>
   </div>
   <div class="chartPie">
-    <div id="pie">
       <ngx-charts-pie-chart
-        class="chartPie"
+        
         [results]="medals"
         [view]="[700, 400]"
         [legend]="false"
@@ -23,7 +22,6 @@
         [gradient]="false"
         (select)="onCountrySelect($event)">
       </ngx-charts-pie-chart>
-    </div>
   </div>
 </div>
 <ng-template #loading class="loading">
